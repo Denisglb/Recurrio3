@@ -10,18 +10,17 @@ import UIKit
 import LoginWithAmazon
 
 
-class ProductViewController: UIViewController, AIAuthenticationDelegate {
+class ProductViewController: UIViewController {
     
     var productLevel = productArray[myIndex].currentWeight/productArray[myIndex].initialWeight
 
-   
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var ProductName: UILabel!
     @IBOutlet weak var Percentage: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var myImage: UIImageView!
     
-    let lwa = LoginWithAmazonProxy.sharedInstance
+//    let lwa = LoginWithAmazonProxy.sharedInstance
     
     // MARK: Amazon login
     @IBAction func onClickLoginBtn(_ sender: Any) {
@@ -30,24 +29,24 @@ class ProductViewController: UIViewController, AIAuthenticationDelegate {
     }
     
     
-    func requestDidSucceed(_ apiResult: APIResult) {
-        
-        switch(apiResult.api) {
-        case API.authorizeUser:
-            print("Authorized")
-            lwa.getAccessToken(delegate: self)
-        case API.getAccessToken:
-            print("Login successfully!")
-            loginBtn.isEnabled = false
-        default:
-            return
-        }
-    }
-    
-    func requestDidFail(_ errorResponse: APIError) {
-        print("Error: \(errorResponse.error.message)")
-    }
-    
+//    func requestDidSucceed(_ apiResult: APIResult) {
+//
+//        switch(apiResult.api) {
+//        case API.authorizeUser:
+//            print("Authorized")
+//            lwa.getAccessToken(delegate: self)
+//        case API.getAccessToken:
+//            print("Login successfully!")
+//            loginBtn.isEnabled = false
+//        default:
+//            return
+//        }
+//    }
+//
+//    func requestDidFail(_ errorResponse: APIError) {
+//        print("Error: \(errorResponse.error.message)")
+//    }
+//
     
     // MARK: Bluetooth Activated
 //    @IBAction func DecreaseButton(_ sender: Any) {

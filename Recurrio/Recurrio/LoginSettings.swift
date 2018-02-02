@@ -6,11 +6,12 @@
 //  Copyright © 2017 Balancing Rock. All rights reserved.
 //
 
-import Foundation
+//import Foundation
+//
+//struct Settings {
+//    
+//    struct Credentials {
+//        static let SCOPES = ["profile"]
+//    }
+//}
 
-struct Settings {
-    
-    struct Credentials {
-        static let SCOPES = ["profile"]
-    }
-}

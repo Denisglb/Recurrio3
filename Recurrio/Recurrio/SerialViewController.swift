@@ -10,9 +10,6 @@ import UIKit
 import CoreBluetooth
 import QuartzCore
 
-
-
-
 // MARK: - Table view data source
 
 var weightData = [Float]();
@@ -72,23 +69,12 @@ final class SerialViewController: UIViewController, UITextFieldDelegate,  Blueto
     
     //MARK: BluetoothSerialDelegate
     
-    
-    
-    
-    
-    
     func serialDidReceiveString(_ message: String) {
         // add the received text to the textView, optionally with a line break at the end
         let formatter = Float(message.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))
         weightData.append(formatter!);
         print(weightData)
     }
-    
-    
-    
-    
-    
-    
     
     func serialDidDisconnect(_ peripheral: CBPeripheral, error: NSError?) {
         let hud = MBProgressHUD.showAdded(to: view, animated: true)

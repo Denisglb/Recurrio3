@@ -34,7 +34,7 @@ var myIndex = 0
 class ProductTableViewController: UITableViewController {
     
     func secondTimerHelper(timer: Timer) {
-        var value = timer.userInfo as! Int
+        let value = timer.userInfo as! Int
         productArray[value].updateWeight()
         self.tableView.reloadData()
     }
@@ -55,7 +55,7 @@ class ProductTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         if (indexPath.row == 0) {
-        var percentageMeasure = String(Int(productArray[indexPath.row].currentWeight/productArray[indexPath.row].initialWeight*100))
+            let percentageMeasure = String(Int(productArray[indexPath.row].currentWeight/productArray[indexPath.row].initialWeight*100))
         cell.textLabel?.text = productArray[indexPath.row].name + " " + percentageMeasure + "%"
             return cell}
         else {
